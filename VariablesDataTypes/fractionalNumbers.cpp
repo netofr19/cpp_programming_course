@@ -5,6 +5,10 @@ using namespace std;
 
 int main()
 {
+    cout << "===================================" << endl;
+    cout << "======== Float Numbers ============" << endl;
+    cout << "===================================" << endl;
+
     //Declare and initialize the variables
     float number1 {1.123456789012345678f};
     double number2 {1.123456789012345678};
@@ -22,6 +26,25 @@ int main()
     cout << "number2 is: " << number2 << endl;
     cout << "number3 is: " << number3 << endl;
 
+    // Infinity and NaN
+    cout << "\n===================================" << endl;
+    cout << "======= Infinity and NaN ==========" << endl;
+    cout << "===================================" << endl;
+
+    double number10 {5.6};
+    double number11 {};
+    double number12 {};
+
+    //Infinity
+    double result {number10 / number11};
+
+    cout << number10 << "/" << number11 << " = " << result << endl;
+    cout << result << "+" << number10 << " = " <<  result + number10 << endl;
+
+    //NaN
+    result = number11 / number12;
+
+    cout << number11 << "/" << number12 << " = " << result << endl;
 
     return 0;
 }
