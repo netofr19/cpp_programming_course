@@ -25,6 +25,28 @@ int main()
     int * p_number3 {nullptr};
     int  *p_number4 {nullptr};
 
+    //Initializing and assigning them data
+    //We know that pointers store addresses of variables
+    int int_var {43};
+    int *p_int{&int_var};
+
+    cout << "Int var: " << int_var << endl;
+    cout << "p_int (Adress in memory): " << p_int << endl;
+
+    //You can also change the address stored in a pointer any time
+    int int_var1 {65};
+    p_int = &int_var1; // Assign a different address to the pointer
+    cout << "p_int (with different address): " << p_int << endl;
+
+    //Dereferencing a pointer
+    int *p_int2 {nullptr};
+    int int_data {56};
+    p_int2 = &int_data;
+
+    cout << "value: " << *p_int2 << endl; // Dereferencing a pointer
+
+    
+
     
     return 0;
 }
