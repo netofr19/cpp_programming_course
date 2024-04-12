@@ -36,13 +36,27 @@ Also, think of how you might solve the problem using the modulo operator
 using namespace std;
 
 
-int main(int argc, char const *argv[])
+int main()
 {
     int amount {0};
     cout << "Enter an amount in cents: ";
     cin >> amount;
+    cout << endl;
 
+    string currency[] = {"dollars", "quarters", "dimes", "nickels", "pennis"};
 
+    int charges[5] {100, 25, 10, 5, 1};
+
+    int rest {amount}, v {0};
+
+    for (int i=0; i<((int)(sizeof(currency)/sizeof(currency[0]))); i++){
+        v = rest / charges[i];
+        rest = rest % charges[i];
+        
+        cout << currency[i] << ": " << v << endl;
+    }
+
+    cout << endl;
 
     return 0;
 }
