@@ -127,6 +127,15 @@ int largeNumber(vector <int> vec){
     return large;
 }
 
+bool searchNumber(vector <int> vec, int data){
+    for (auto v: vec){
+        if (v == data){
+            return true;
+        }
+    }
+    return false;
+}
+
 int main()
 {
     vector <int> list;
@@ -140,6 +149,7 @@ int main()
         cout << "M - Display mean of the numbers" << endl;
         cout << "S - Display the smallest number" << endl;
         cout << "L - Display the largest number" << endl;
+        cout << "F - Find a number in the list" << endl;
         cout << "Q - Quit" << endl;
 
         cout << "Enter your choice: ";
@@ -183,6 +193,18 @@ int main()
             else {
                 int large = largeNumber(list);
                 cout << "The largest number is: " << large << endl;
+            }
+        }
+        else if (choice == "f" || choice == "F"){
+            int value {};
+            cout << "Please, enter a value to search: ";
+            cin >> value;
+            bool hasValue = searchNumber(list, value);
+            if (hasValue){
+                cout << "The list has the indicated value." << endl;
+            }
+            else{
+                cout << "The list does not have the indicated value." << endl;
             }
         }
         else if (choice == "q" || choice == "Q"){
